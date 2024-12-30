@@ -1,5 +1,7 @@
 from src.Corona.logger import logging
 from src.Corona.exception import CustomException
+from src.Corona.components.data_ingestion import DataIngestion
+from src.Corona.components.data_ingestion import DataIngestionConfig
 import sys
 
 
@@ -9,8 +11,11 @@ if __name__ == "__main__":
 
     
     try:
+       # data_ingestion_config = DataIngestionConfig()
+        data_ingestion = DataIngestion()
+        data_ingestion.initiate_data_ingestion()
         
-        a=1/0
+                
     except Exception as e:
         logging.info("Custome Exception")
         raise CustomException(e,sys)
